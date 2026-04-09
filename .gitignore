@@ -1,0 +1,4 @@
+/target
+/venv
+/model_service/models
+Cargo.lock
