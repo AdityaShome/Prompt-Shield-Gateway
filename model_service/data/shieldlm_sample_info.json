@@ -1,0 +1,14 @@
+{
+  "description": "These are 10-line sample files for inspection only, not the full ShieldLM dataset.",
+  "full_dataset_loader": "./venv/bin/python model_service/fetch_shieldlm.py",
+  "sample_files": [
+    "model_service/data/shieldlm_sample_train.jsonl",
+    "model_service/data/shieldlm_sample_validation.jsonl",
+    "model_service/data/shieldlm_sample_test.jsonl"
+  ],
+  "full_dataset_files": [
+    "model_service/data/shieldlm/train.jsonl",
+    "model_service/data/shieldlm/validation.jsonl",
+    "model_service/data/shieldlm/test.jsonl"
+  ]
+}
