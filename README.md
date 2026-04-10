@@ -7,6 +7,8 @@ Rust prompt security middleware with a shared core engine, an embedded integrati
 ![Model Comparison Metrics](model_service/reports/model_comparison_metrics.png)
 ![Precision Recall Curve](model_service/reports/precision_recall_curve.png)
 ![ShieldLM DistilBERT Confusion Matrix](model_service/reports/shieldlm_distilbert_confusion_matrix.png)
+<img width="1548" height="655" alt="image" src="https://github.com/user-attachments/assets/32719d71-b65f-4dca-b560-0aea301d0d17" />
+
 
 ## Architecture
 
