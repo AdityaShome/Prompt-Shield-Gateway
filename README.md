@@ -9,6 +9,71 @@ Rust prompt security middleware with a shared core engine, an embedded integrati
 ![ShieldLM DistilBERT Confusion Matrix](model_service/reports/shieldlm_distilbert_confusion_matrix.png)
 <img width="1548" height="655" alt="image" src="https://github.com/user-attachments/assets/32719d71-b65f-4dca-b560-0aea301d0d17" />
 
+## Hugging Face Upload Guide
+
+This project was published to Hugging Face in two separate repos:
+
+- Model repo: `AdiSdyrj/prompt-shield-distilbert`
+- Space repo: `AdiSdyrj/Prompt-Shield`
+
+Set CLI path (if `hf` is installed in `~/.local/bin`):
+
+```bash
+env PATH="/home/aditya/.local/bin:$PATH" hf auth login --force
+```
+
+### 1. Upload the model files
+
+Upload local directory `prompt-shield-distilbert/` to model repo root:
+
+```bash
+env PATH="/home/aditya/.local/bin:$PATH" \
+hf upload AdiSdyrj/prompt-shield-distilbert \
+/home/aditya/hackathon/hf-repo-prompt-shield/prompt-shield-distilbert \
+.
+```
+
+### 2. Upload the Space app files
+
+Upload Gradio app and dependencies to Space repo:
+
+```bash
+env PATH="/home/aditya/.local/bin:$PATH" \
+hf upload AdiSdyrj/Prompt-Shield \
+/home/aditya/hackathon/hf-repo-prompt-shield/app.py \
+app.py --repo-type space
+
+env PATH="/home/aditya/.local/bin:$PATH" \
+hf upload AdiSdyrj/Prompt-Shield \
+/home/aditya/hackathon/hf-repo-prompt-shield/requirements.txt \
+requirements.txt --repo-type space
+```
+
+### 3. Ensure Space metadata exists
+
+Space build/runtime config is read from `README.md` in the Space repo:
+
+```yaml
+---
+title: Prompt Shield
+sdk: gradio
+app_file: app.py
+---
+```
+
+Upload it:
+
+```bash
+env PATH="/home/aditya/.local/bin:$PATH" \
+hf upload AdiSdyrj/Prompt-Shield \
+/home/aditya/hackathon/hf-repo-prompt-shield/README.md \
+README.md --repo-type space
+```
+
+### 4. Verify
+
+- Model: `https://huggingface.co/AdiSdyrj/prompt-shield-distilbert`
+- Space: `https://huggingface.co/spaces/AdiSdyrj/Prompt-Shield`
 
 ## Architecture
 
